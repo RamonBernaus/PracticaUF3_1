@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
@@ -14,18 +15,22 @@ import java.io.IOException;
 public class Ex1 {
 
     public static void main(String[] args) throws IOException {
-        File archivo = new File("C:\\archivo.txt");
-        FileReader fr = new FileReader(archivo);
+        File F = new File("./arxiu.txt");
+        F.createNewFile();
+        FileReader fr = new FileReader(F);
         BufferedReader br = new BufferedReader(fr);
+        Scanner s = new Scanner(System.in);
         try {
             String linea;
-            while ((linea = br.readLine()) != null) 
-                System.out.println(" Digues una frase i es guardara");
+            System.out.println("Digues una frase ");
+            linea = s.nextLine();
+            while ((linea = br.readLine()) != null) {
+                System.out.println(linea);
             }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            fr.close();
         }
 
     }
-
 }
