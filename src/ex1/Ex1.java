@@ -26,13 +26,14 @@ public class Ex1 {
             String linea;
             System.out.println("Digues una frase ");
             linea = s.nextLine();
-            while ((linea = br.readLine()) != null) {
-                
-            }
+            fr.close();           
         } catch (Exception e) {
             e.printStackTrace();
-            fr.close();
+            
         }
 
+    }
+    public static String File(){
+        
     }
 }
