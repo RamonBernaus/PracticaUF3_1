@@ -5,6 +5,7 @@ package ex1;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class Ex1 {
         File F = new File("./arxiu.txt");
         F.createNewFile();
         FileReader fr = new FileReader(F);
+        FileWriter writer = new FileWriter(F,true);
         BufferedReader br = new BufferedReader(fr);
         Scanner s = new Scanner(System.in);
         try {
@@ -25,7 +27,7 @@ public class Ex1 {
             System.out.println("Digues una frase ");
             linea = s.nextLine();
             while ((linea = br.readLine()) != null) {
-                System.out.println(linea);
+                
             }
         } catch (Exception e) {
             e.printStackTrace();
