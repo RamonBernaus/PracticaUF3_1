@@ -17,6 +17,11 @@ import java.util.Scanner;
 public class Ex1 {
 
     public static void main(String[] args) throws IOException {
+        System.out.println("Aquest programa llegeix i guarde els fitxers tipo text que donis.");
+        System.out.println("Així que...");
+        File_read();
+    }
+    public static String File_read() throws IOException{
         File F = new File("./arxiu.txt");
         F.createNewFile();
         FileReader fr = new FileReader(F);
@@ -24,8 +29,9 @@ public class Ex1 {
         BufferedReader br = new BufferedReader(fr);
         PrintWriter pw = new PrintWriter(writer);
         Scanner s = new Scanner(System.in);
+        String linea = null;
+        do{
         try {
-            String linea;
             System.out.println("Digues una frase ");
             linea = s.nextLine();
             linea = br.readLine();
@@ -37,6 +43,13 @@ public class Ex1 {
             e.printStackTrace();
             
         }
-
-    }
+        } while();
+        
+        return linea;
+        }
+     public static String File_print() throws IOException{
+         String si = null;
+         return si;
+     }
+    
 }
