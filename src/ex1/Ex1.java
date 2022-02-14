@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ausias
+ * @author Ramon
  */
 public class Ex1 {
 
