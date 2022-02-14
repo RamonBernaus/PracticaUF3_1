@@ -1,5 +1,7 @@
-/*1. Crea un programa que llegeixi frases per teclat i les vagi guardant en un fitxer
-“textos.txt”. El programa finalitzarà quan s’entri una cadena buida*/
+/*
+1. Crea un programa que llegeixi frases per teclat i les vagi guardant en un fitxer
+“textos.txt”. El programa finalitzarà quan s’entri una cadena buida
+*/
 package ex1;
 
 import java.io.BufferedReader;
@@ -15,12 +17,12 @@ import java.util.Scanner;
  * @author Ramon
  */
 public class Ex1 {
-    
+
     public static void main(String[] args) throws IOException {
-        
+
         String linea;
         System.out.println("Aquest programa llegeix i guarde els fitxers tipo text que donis.");
-        System.out.println("Així que..."); 
+        System.out.println("Així que...");
         File_read();
         
         }
@@ -52,8 +54,9 @@ public class Ex1 {
         }
         }while(comprovar = true);
         return linea;
-        }
-     public static File File_print(String F) throws IOException{ 
+    }
+
+    public static File File_print(String F) throws IOException {
         File arxiu = new File("./arxiu.txt");
         FileWriter write = new FileWriter(arxiu, true);
         PrintWriter pw = new PrintWriter(write);
@@ -61,8 +64,6 @@ public class Ex1 {
         pw.flush();
         write.close();
         return arxiu;
-     }
-     
-     
-    
+    }
+
 }
