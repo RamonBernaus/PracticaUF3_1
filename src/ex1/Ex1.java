@@ -25,25 +25,25 @@ public class Ex1 {
         
         }
     public static String File_read() throws IOException{
-        File F = new File("./arxiu.txt");
+        File arxiu = new File("./arxiu.txt");
         Scanner s = new Scanner(System.in);
-        F.createNewFile();
-        FileReader fr = new FileReader(F);
+        arxiu.createNewFile();
+        FileReader fr = new FileReader(arxiu);
         BufferedReader br = new BufferedReader(fr);
         String linea = null;
         boolean comprovar = true;
         do{
         try {
         System.out.println("Digues una frase ");
-        linea= s.nextLine();
+        linea = br.readLine();
+        linea= s.nextLine();       
         if (linea.equals("")){
             System.out.println("La linea esta buida, el programa s'ha aturat");
             fr.close();
             comprovar = false;
             return linea;
         } else{
-            comprovar = true;
-            linea = br.readLine();
+            comprovar = true;          
             File_print(linea);
         }
         } catch (Exception e) {
