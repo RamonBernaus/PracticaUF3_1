@@ -63,9 +63,9 @@ public class Ex1 {
 
     public static File File_print(String F) throws IOException {
         File arxiu = new File("./arxiu.txt"); //Cridem al file
-        FileWriter write = new FileWriter(arxiu, true); 
+        FileWriter write = new FileWriter(arxiu, true);
         PrintWriter pw = new PrintWriter(write); //el copiem al arxiu
-        pw.println(F); 
+        pw.println(F);
         pw.flush();
         write.close(); //parem 
         return arxiu;
