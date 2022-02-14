@@ -15,21 +15,22 @@ import java.util.Scanner;
  * @author Ramon
  */
 public class Ex1 {
-
+    
     public static void main(String[] args) throws IOException {
         
         String linea;
         System.out.println("Aquest programa llegeix i guarde els fitxers tipo text que donis.");
         System.out.println("Així que..."); 
         File_read();
+        
         }
     public static String File_read() throws IOException{
         File F = new File("./arxiu.txt");
         Scanner s = new Scanner(System.in);
         F.createNewFile();
-        String linea = null;
         FileReader fr = new FileReader(F);
-        FileWriter writer = new FileWriter(F,true);
+        BufferedReader br = new BufferedReader(fr);
+        String linea = null;
         boolean comprovar = true;
         do{
         try {
@@ -42,6 +43,8 @@ public class Ex1 {
             return linea;
         } else{
             comprovar = true;
+            linea = br.readLine();
+            File_print(linea);
         }
         } catch (Exception e) {
             e.printStackTrace();
@@ -50,13 +53,14 @@ public class Ex1 {
         }while(comprovar = true);
         return linea;
         }
-     public static String File_print() throws IOException{
-         String si = null;
-         return si;
-         /*
-         pw.println(linea);
-         pw.flush();
-         writer.close();*/
+     public static File File_print(String F) throws IOException{ 
+        File arxiu = new File("./arxiu.txt");
+        FileWriter write = new FileWriter(arxiu, true);
+        PrintWriter pw = new PrintWriter(write);
+        pw.println(F);
+        pw.flush();
+        write.close();
+        return arxiu;
      }
      
      
