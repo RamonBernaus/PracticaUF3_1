@@ -17,39 +17,48 @@ import java.util.Scanner;
 public class Ex1 {
 
     public static void main(String[] args) throws IOException {
+        
+        String linea;
         System.out.println("Aquest programa llegeix i guarde els fitxers tipo text que donis.");
-        System.out.println("Així que...");
+        System.out.println("Així que..."); 
         File_read();
-    }
+        }
     public static String File_read() throws IOException{
         File F = new File("./arxiu.txt");
+        Scanner s = new Scanner(System.in);
         F.createNewFile();
+        String linea = null;
         FileReader fr = new FileReader(F);
         FileWriter writer = new FileWriter(F,true);
-        BufferedReader br = new BufferedReader(fr);
-        PrintWriter pw = new PrintWriter(writer);
-        Scanner s = new Scanner(System.in);
-        String linea = null;
+        boolean comprovar = true;
         do{
         try {
-            System.out.println("Digues una frase ");
-            linea = s.nextLine();
-            linea = br.readLine();
-            pw.println(linea);
-            pw.flush();
-            writer.close();
-            fr.close();           
+        System.out.println("Digues una frase ");
+        linea= s.nextLine();
+        if (linea.equals("")){
+            System.out.println("La linea esta buida, el programa s'ha aturat");
+            fr.close();
+            comprovar = false;
+            return linea;
+        } else{
+            comprovar = true;
+        }
         } catch (Exception e) {
             e.printStackTrace();
             
         }
-        } while();
-        
+        }while(comprovar = true);
         return linea;
         }
      public static String File_print() throws IOException{
          String si = null;
          return si;
+         /*
+         pw.println(linea);
+         pw.flush();
+         writer.close();*/
      }
+     
+     
     
 }

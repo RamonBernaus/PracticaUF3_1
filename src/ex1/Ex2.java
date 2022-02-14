@@ -4,7 +4,7 @@ a) Si el fitxer no existeix, que el generi.
 b) Si el fitxer ja existeix, que afegeixi el contingut al final.
 c) Si l’usuari escriu @ESBORRA, cal esborrar el contingut del fitxer.
 */
-package ex2;
+package ex1;
 
 import java.io.BufferedReader;
 import java.io.File;
