@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -21,19 +22,21 @@ public class Ex1 {
         FileReader fr = new FileReader(F);
         FileWriter writer = new FileWriter(F,true);
         BufferedReader br = new BufferedReader(fr);
+        PrintWriter pw = new PrintWriter(writer);
         Scanner s = new Scanner(System.in);
         try {
             String linea;
             System.out.println("Digues una frase ");
             linea = s.nextLine();
+            linea = br.readLine();
+            pw.println(linea);
+            pw.flush();
+            writer.close();
             fr.close();           
         } catch (Exception e) {
             e.printStackTrace();
             
         }
 
-    }
-    public static String File(){
-        
     }
 }
