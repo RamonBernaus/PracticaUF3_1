@@ -15,3 +15,5 @@ public class Ex2 {
 
     }
 }
+
+1c
